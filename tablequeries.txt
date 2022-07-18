@@ -1,0 +1,24 @@
+create table doctor (
+	id  int NOT NULL AUTO_INCREMENT,
+	name varchar(120) NOT NULL,
+	email varchar(220) NOT NULL,
+    experience varchar(255) NOT NULL,
+    fee int NOT NULL,
+    location varchar(255) NOT NULL,
+    category varchar(255) NOT NULL,
+	PRIMARY KEY (id)
+);
+
+create table appointment (
+	id  int NOT NULL AUTO_INCREMENT,
+	patientName varchar(255) ,
+    patientEmail varchar(255) ,
+    patientAge varchar(255) ,
+    reason varchar(255) ,
+    slot varchar(255) ,
+    doctorName varchar(255) ,
+    doctorid int,
+    location varchar(255),
+	PRIMARY KEY (id),
+    FOREIGN KEY (doctorid) REFERENCES doctor(id)
+);
